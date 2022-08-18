@@ -1,0 +1,28 @@
+DOMAIN = 'api.enphaseenergy.com'
+CLIENT_ID = "" # get from https://developer-v4.enphase.com/admin/applications
+CLIENT_SECRET = "" # get from https://developer-v4.enphase.com/admin/applications
+api_key = '' # get from https://developer-v4.enphase.com/admin/applications
+'''
+Retrieve the auth code from the system owner after he logs in and allows access to the application
+https://developer-v4.enphase.com/docs/quickstart.html (the code is retrieved in step 7)
+'''
+auth_code = "" 
+REDIRECT_URI = "https://api.enphaseenergy.com/oauth/redirect_uri" #defaualt enphase redirect URI, used for token refresh
+'''
+Fill the json file with the output of the gathering of a access and refresh token:
+https://developer-v4.enphase.com/docs/quickstart.html#step_8
+'''
+credentials = "/home/bla/creds.json" 
+API_settings = "/dev/shm/enphase_API_requests_counter" # a temporary location to store json data
+API_limit = 10 # enter your limit of API calls per minute
+data_path = "/home/bla/temp" # Enter the destination directory of your files
+system_id = "" # Enter your enphase systemID here
+'''
+I decided to hard-code all my micro's to prevent an extra API call (and code) to fetch them from the api 
+if you dont want this, you could fetch them from the API
+from systems/{system_id}/devices
+'''
+all_micros = [
+'serial_1',
+'serial_2',
+]
